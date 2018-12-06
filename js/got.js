@@ -13,6 +13,7 @@ function successGetGameOfThronesCharacterDatas(xhttp) {
   // Nem szabad globálisba kitenni a userDatas-t!
   var userDatas = JSON.parse(xhttp.responseText);
   // Innen hívhatod meg a többi függvényed
+  lol(userDatas);
 }
 
 getGameOfThronesCharacterDatas(
@@ -22,3 +23,7 @@ getGameOfThronesCharacterDatas(
 
 // Live servert használd mindig!!!!!
 /* IDE ÍRD A FÜGGVÉNYEKET!!!!!! NE EBBE AZ EGY SORBA HANEM INNEN LEFELÉ! */
+function lol(sajt) {
+  var tbody = document.querySelector('tbody');
+  tbody.innerHTML = sajt;
+}
