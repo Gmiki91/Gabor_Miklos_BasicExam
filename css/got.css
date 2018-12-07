@@ -1,15 +1,28 @@
-tbody{
-  box-sizing: border-box;
-  width: 50%;
+div{
+  float: left;
+  width: 60% 40%;
 }
-
+div.side {
+  height: 1200px;
+  width: 200px;
+  background-color: grey;
+}
 td.nevek {
   padding-bottom: 30px;
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
   width: 5px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
+
+td.nevek:hover {
+  color: red;
+  cursor: pointer;
+
+}
+
 td.ikonok {
   padding-left: 30px;
   padding-right: 30px;
