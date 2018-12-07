@@ -15,7 +15,7 @@ function successGetGameOfThronesCharacterDatas(xhttp) {
   // Innen hívhatod meg a többi függvényed
   var aliveData = removeDeadPeople(userDatas);
   var sortedData = sortPeople(aliveData);
-  displayNames(sortedData);
+  displayCharacters(sortedData);
 }
 
 getGameOfThronesCharacterDatas(
@@ -27,7 +27,6 @@ getGameOfThronesCharacterDatas(
 /* IDE ÍRD A FÜGGVÉNYEKET!!!!!! NE EBBE AZ EGY SORBA HANEM INNEN LEFELÉ! */
 function removeDeadPeople(data) {
   var adat = [];
-  console.log(data[0]);
   for (var i = 0; i < data.length; i++) {
     if (!data[i].dead) {
       adat.push(data[i]);
@@ -42,26 +41,41 @@ function sortPeople(data) {
   });
   return sorban;
 }
+function displayCharacters(data) { // adding the portraits and the names one after another on different rows
+  var tbody = document.querySelector('tbody.list');
+  var tr = document.createElement('tr');
+  var count = 0;
 
-function displayNames(data) {
-  var tbody = document.querySelector('tbody');
-  for (var i = 0; i < data.length; i++) {
-    if (i % 8 === 0) {
-      var tr = document.createElement('tr');
+  for (var j = 0; j < 6; j++) {
+    for (var i = 0; i < 8; i++) {
+      addIcons(data, i + count, tr);
     }
-    createTd(data, i, tr);
-    addRowToBody(i, tr, tbody);
+    tr = addRow(tbody, tr);
+    for  (i = 0; i < 8; i++) {
+      addNames(data, i + count, tr);
+    }
+    tr = addRow(tbody, tr);
+    count += 8;
   }
 }
 
-function createTd(data, i, tr) {
+function addRow(tbody, tr) {
+  tbody.appendChild(tr);
+  return document.createElement('tr');
+}
+
+function addIcons(data, i, tr) {
   var td = document.createElement('td');
-  td.innerHTML = data[i].name;
+  td.className = 'ikonok';
+  var image = document.createElement('img');
+  image.src =  data[i].portrait;
+  td.appendChild(image);
   tr.appendChild(td);
 }
 
-function addRowToBody(i, tr, tbody) {
-  if (i % 7 === 0) {
-    tbody.appendChild(tr);
-  }
+function addNames(data, i, tr) {
+  var td = document.createElement('td');
+  td.className = 'nevek';
+  td.innerHTML = data[i].name;
+  tr.appendChild(td);
 }

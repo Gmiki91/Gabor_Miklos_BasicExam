@@ -1,0 +1,19 @@
+tbody{
+  box-sizing: border-box;
+  width: 50%;
+}
+
+td.nevek {
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  width: 5px;
+}
+td.ikonok {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  text-align: center;
+  width: 5px;
+}
