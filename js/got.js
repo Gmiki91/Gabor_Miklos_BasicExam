@@ -69,6 +69,9 @@ function addIcons(data, i, tr) {
   td.className = 'ikonok';
   var image = document.createElement('img');
   image.src =  data[i].portrait;
+  td.onclick = function () {
+    showDetails(data, i);
+  };
   td.appendChild(image);
   tr.appendChild(td);
 }
@@ -78,4 +81,8 @@ function addNames(data, i, tr) {
   td.className = 'nevek';
   td.innerHTML = data[i].name;
   tr.appendChild(td);
+}
+
+function showDetails(data, i) {
+  console.log(data[i].name);
 }
