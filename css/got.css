@@ -1,11 +1,18 @@
-div{
-  float: left;
-}
-div.side {
-  background-color: grey;
-}
-div table {
+body {
   background: url(/pics/The_Wall_from_the_south.jpg) no-repeat;
+  background-size: cover;
+}
+div.list {
+  float: left;
+  width: 30%;
+  margin-right: 30%;
+}
+
+div.side {
+  float: right;
+  width: 25%;
+
+  background-color: grey;
 }
 td.nevek {
   padding-bottom: 30px;
@@ -25,8 +32,6 @@ td.nevek:hover {
 }
 
 td.ikonok {
-  border: 1px solid black;
-  block-size: 1cm;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
