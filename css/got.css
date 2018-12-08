@@ -1,20 +1,21 @@
 div{
   float: left;
-  width: 60% 40%;
 }
 div.side {
-  height: 1200px;
-  width: 200px;
   background-color: grey;
+}
+div table {
+  background: url(/pics/The_Wall_from_the_south.jpg) no-repeat;
 }
 td.nevek {
   padding-bottom: 30px;
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
-  width: 5px;
+  width: 1px;
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
+
 }
 
 td.nevek:hover {
@@ -24,9 +25,10 @@ td.nevek:hover {
 }
 
 td.ikonok {
+  border: 1px solid black;
+  block-size: 1cm;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
   text-align: center;
-  width: 5px;
 }

@@ -69,9 +69,6 @@ function addIcons(data, i, tr) {
   td.className = 'ikonok';
   var image = document.createElement('img');
   image.src =  data[i].portrait;
-  td.onclick = function () {
-    showDetails(data, i);
-  };
   td.appendChild(image);
   tr.appendChild(td);
 }
@@ -79,10 +76,16 @@ function addIcons(data, i, tr) {
 function addNames(data, i, tr) {
   var td = document.createElement('td');
   td.className = 'nevek';
+  td.onclick = function () {
+    showDetails(data, i);
+  };
   td.innerHTML = data[i].name;
   tr.appendChild(td);
 }
 
 function showDetails(data, i) {
-  console.log(data[i].name);
+  document.querySelector('img.picture').src = data[i].picture;
+  document.querySelector('td.name').innerHTML = data[i].name;
+  document.querySelector('img.banner').src = `assets/houses/${data[i].house}.png`;
+  document.querySelector('td.bio').innerHTML = data[i].bio;
 }
