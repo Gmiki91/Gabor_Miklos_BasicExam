@@ -99,9 +99,15 @@ function searchButtonEventListener(data) {
 
 function search(data) {
   var input = (document.querySelector('#search_input').value).toLowerCase();
+  var found = false;
   for (var i = 0; i < data.length; i++) {
     if (input === data[i].name.toLowerCase()) {
       showDetails(data, i);
+      found = true;
     }
   }
-} // test
+  if (!found) {
+    document.querySelector('#search_input').value = '';
+    document.querySelector('#search_input').placeholder = 'Character not found';
+  }
+}
