@@ -15,6 +15,7 @@ function successGetGameOfThronesCharacterDatas(xhttp) {
   // Innen hívhatod meg a többi függvényed
   var aliveData = removeDeadPeople(userDatas);
   var sortedData = sortPeople(aliveData);
+  searchButtonEventListener(sortedData);
   displayCharacters(sortedData);
 }
 
@@ -88,4 +89,19 @@ function showDetails(data, i) {
   document.querySelector('td.name').innerHTML = data[i].name;
   document.querySelector('img.banner').src = `assets/houses/${data[i].house}.png`;
   document.querySelector('td.bio').innerHTML = data[i].bio;
+}
+
+
+function searchButtonEventListener(data) {
+  var element = document.querySelector('#search_button');
+  element.addEventListener('click', function () { search(data);});
+}
+
+function search(data) {
+  var input = (document.querySelector('#search_input').value).toLowerCase();
+  for (var i = 0; i < data.length; i++) {
+    if (input === data[i].name.toLowerCase()) {
+      showDetails(data, i);
+    }
+  }
 }
