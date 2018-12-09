@@ -1,12 +1,12 @@
 body {
-  background: url(/pics/The_Wall_from_the_south.jpg) no-repeat;
+  background: url(/assets/site/mapblue.jpg) no-repeat;
   background-size: cover;
 }
 div.list {
   float: left;
   width: 30%;
   margin-right: 30%;
-  color: whitesmoke;
+  color: black;
 }
 div.side {
   height: 100%;
@@ -53,9 +53,6 @@ td.ikonok {
   text-align: center;
 }
 
-img.banner {
-  align-content: left;
-}
 img.picture {
   max-width:100%;
   max-height:100%;
