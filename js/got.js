@@ -104,4 +104,4 @@ function search(data) {
       showDetails(data, i);
     }
   }
-}
+} // test
