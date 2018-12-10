@@ -25,6 +25,7 @@ footer div.search {
   position: fixed;
   width: 350px;
 }
+
 @font-face {
   font-family: got; 
   src: url(/Game\ of\ Thrones.ttf);
